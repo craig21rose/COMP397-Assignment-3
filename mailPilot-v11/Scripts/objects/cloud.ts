@@ -22,21 +22,29 @@ module objects {
             game.addChild(this.image);
         }
 
-        update() {
-            this.image.y += this.dy;
-            this.image.x += this.dx;
-            if (this.image.y > this.stage.canvas.height + this.height) {
-                this.reset();
-            }
-        }
+        update()
+        {
+       this.image.y += this.dy;
+       this.image.x += this.dx;
 
-        reset() {
-            this.image.x = Math.floor(Math.random() * this.stage.canvas.width);
-            this.dy = Math.floor(Math.random() * 5 + 5);
-            this.dx = Math.floor(Math.random() * -3) + Math.floor(Math.random() * 3);
-            this.image.y = -this.height;
-        }
+       this._checkBounds();
+}
 
+        // Reset position of island to the top
+         reset() {
+    this.image.y = Math.floor(Math.random() * 640);
+    this.image.x = -this.height;
+    this.dy = Math.floor(Math.random() * 4) - 2;
+    this.dx = Math.floor(Math.random() * 5) + 5;
+}
+
+        // PRIVATE METHODS +++++++++++++++++++++++++++++++++++++++++
+        private _checkBounds() {
+    // check if island has left the bottom of the screen
+    if (this.image.x >= (640 + this.height)) {
+        this.reset();
+    }
+}
         destroy() {
             game.removeChild(this.image);
         }

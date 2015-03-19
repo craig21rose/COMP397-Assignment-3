@@ -17,13 +17,19 @@ var objects;
         }
         Island.prototype.update = function () {
             this.image.x += this.dy;
-            if (this.image.x > this.stage.canvas.height + this.height) {
+            this._checkBounds();
+        };
+        // Reset position of island to the top
+        Island.prototype.reset = function () {
+            this.image.y = Math.floor(Math.random() * 640);
+            this.image.x = -this.height;
+        };
+        // PRIVATE METHODS +++++++++++++++++++++++++++++++++++++++++
+        Island.prototype._checkBounds = function () {
+            // check if island has left the bottom of the screen
+            if (this.image.x >= (640 + this.height)) {
                 this.reset();
             }
-        };
-        Island.prototype.reset = function () {
-            this.image.y = Math.floor(Math.random() * this.stage.canvas.width);
-            this.image.x = -this.height;
         };
         Island.prototype.destroy = function () {
             game.removeChild(this.image);

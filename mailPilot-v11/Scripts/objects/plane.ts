@@ -12,7 +12,7 @@ module objects {
             this.stage = stage;
             this.game = game;
             this.image = new createjs.Sprite(managers.Assets.atlas, "plane");
-            this.image.x = 30;
+            this.image.x = 610;
             this.width = this.image.getBounds().width;
             this.height = this.image.getBounds().height;
             this.image.regX = this.width / 2;

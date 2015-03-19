@@ -20,7 +20,7 @@ var objects;
             }
         };
         Ocean.prototype.reset = function () {
-            this.image.x = -960;
+            this.image.x = -640;
         };
         Ocean.prototype.destroy = function () {
             game.removeChild(this.image);

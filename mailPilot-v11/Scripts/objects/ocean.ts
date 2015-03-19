@@ -29,7 +29,7 @@ module objects {
         }
 
         reset() {
-            this.image.x = -960;
+            this.image.x = -640;
         }
 
         destroy() {

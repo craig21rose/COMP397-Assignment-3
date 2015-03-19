@@ -23,16 +23,24 @@ module objects {
             game.addChild(this.image);
         }
 
-        update() {
+        public update() {
             this.image.x += this.dy;
-            if (this.image.x > this.stage.canvas.height + this.height) {
-                this.reset();
-            }
+
+            this._checkBounds();
         }
 
-        reset() {
-            this.image.y = Math.floor(Math.random() * this.stage.canvas.width);
+        // Reset position of island to the top
+        public reset() {
+            this.image.y = Math.floor(Math.random() * 640);
             this.image.x = -this.height;
+        }
+
+        // PRIVATE METHODS +++++++++++++++++++++++++++++++++++++++++
+        private _checkBounds() {
+            // check if island has left the bottom of the screen
+            if (this.image.x >= (640 + this.height)) {
+                this.reset();
+            }
         }
 
         destroy() {
