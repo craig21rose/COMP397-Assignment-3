@@ -23,7 +23,7 @@
         }
 
         update() {
-            this.labelText = "Lives: " + this.lives.toString() + " Score: " + this.score.toString();
+            this.labelText = "Hits Left: " + this.lives.toString() + " Cosmic Power: " + this.score.toString();
             this.label.text = this.labelText;
         }
 

@@ -60,19 +60,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="assets\images\asteroid.png" />
-    <Content Include="assets\images\atlas.png" />
     <Content Include="assets\images\background.png" />
     <Content Include="assets\images\btnInstructions.png" />
     <Content Include="assets\images\buttonpage.png" />
-    <Content Include="assets\images\cloud.png" />
     <Content Include="assets\images\goldenstar.png" />
     <Content Include="assets\images\playagainbutton2.png" />
     <Content Include="assets\images\playbutton.png" />
     <Content Include="assets\images\ship.png" />
-    <Content Include="assets\images\spaceship.png" />
-    <Content Include="assets\sounds\yay.ogg" />
-    <Content Include="assets\sounds\thunder.ogg" />
-    <Content Include="assets\sounds\engine.ogg" />
+    <Content Include="assets\sounds\explode.ogg" />
+    <Content Include="assets\sounds\power.ogg" />
+    <Content Include="assets\sounds\RocketThrusters.ogg" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

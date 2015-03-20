@@ -5,9 +5,9 @@
         { id: "star", src: "assets/images/goldenstar.png" },
         { id: "ship", src: "assets/images/ship.png" },
         { id: "asteroid", src: "assets/images/asteroid.png" },
-        { id: "engine", src: "assets/sounds/engine.ogg" },
-        { id: "thunder", src: "assets/sounds/thunder.ogg" },
-        { id: "yay", src: "assets/sounds/yay.ogg" }
+        { id: "engine", src: "assets/sounds/RocketThrusters.ogg" },
+        { id: "thunder", src: "assets/sounds/explode.ogg" },
+        { id: "yay", src: "assets/sounds/power.ogg" }
     ];
 
     // SpriteSheet Data Object
@@ -23,7 +23,6 @@
             "instructionsButton": [0],
             "playButton": [1],
             "tryAgainButton": [2]
-
         }
     }
 

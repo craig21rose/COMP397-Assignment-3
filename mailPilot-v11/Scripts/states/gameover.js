@@ -36,7 +36,7 @@ var states;
         gameOverLabel = new objects.Label(stage.canvas.width / 2, 40, "GAME OVER");
         game.addChild(gameOverLabel);
         // Display Final Score Label
-        finalScoreLabel = new objects.Label(stage.canvas.width / 2, 120, "FINAL SCORE");
+        finalScoreLabel = new objects.Label(stage.canvas.width / 2, 120, "Final Score");
         game.addChild(finalScoreLabel);
         // Display Final Score
         finalScore = new objects.Label(stage.canvas.width / 2, 160, scoreboard.score.toString());

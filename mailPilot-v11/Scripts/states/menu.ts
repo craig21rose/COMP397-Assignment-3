@@ -23,6 +23,8 @@ module states {
 
     export function menu() {
         var gameNameLabel: objects.Label;
+        var gameNameLabel2: objects.Label;
+        var gameNameLabel3: objects.Label;
 
         // Declare new Game Container
         game = new createjs.Container();
@@ -35,8 +37,14 @@ module states {
         stage.cursor = "default";
 
         // Display Game Over
-        gameNameLabel = new objects.Label(stage.canvas.width / 2, 40, "MAIL PILOT");
+        gameNameLabel = new objects.Label(stage.canvas.width / 2, 40, "COSMIC POWER");
         game.addChild(gameNameLabel);
+
+        gameNameLabel2 = new objects.Label(stage.canvas.width / 2, 120, "Instructions:");
+        game.addChild(gameNameLabel2);
+
+        gameNameLabel3 = new objects.Label(stage.canvas.width / 2, 160, "Movement: Move Mouse Up or Down");
+        game.addChild(gameNameLabel3);
 
         // Display Play Again Button
         playButton = new objects.Button(stage.canvas.width / 2, 300, "playButton");

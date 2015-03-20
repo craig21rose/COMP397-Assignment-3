@@ -2,17 +2,13 @@ var managers;
 (function (managers) {
     // Image and Sound Manifest;
     var assetManifest = [
-        { id: "loading", src: "assets/images/loading.jpg" },
         { id: "space", src: "assets/images/background.png" },
         { id: "star", src: "assets/images/goldenstar.png" },
         { id: "ship", src: "assets/images/ship.png" },
         { id: "asteroid", src: "assets/images/asteroid.png" },
-        { id: "playButton", src: "assets/images/playbutton.png" },
-        { id: "tryAgainButton", src: "assets/images/playagainbutton2.png" },
-        { id: "instructionsButton", src: "assets/images/btnInstructions.png" },
-        { id: "engine", src: "assets/sounds/engine.ogg" },
-        { id: "thunder", src: "assets/sounds/thunder.ogg" },
-        { id: "yay", src: "assets/sounds/yay.ogg" }
+        { id: "engine", src: "assets/sounds/RocketThrusters.ogg" },
+        { id: "thunder", src: "assets/sounds/explode.ogg" },
+        { id: "yay", src: "assets/sounds/power.ogg" }
     ];
     // SpriteSheet Data Object
     var spriteSheetData = {
