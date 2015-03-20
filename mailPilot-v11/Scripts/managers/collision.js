@@ -15,15 +15,7 @@ var managers;
         }
         // Utility method - Distance calculation between two points
         Collision.prototype.distance = function (p1, p2) {
-            var result = 0;
-            var xPoints = 0;
-            var yPoints = 0;
-            xPoints = p2.x - p1.x;
-            xPoints = xPoints * xPoints;
-            yPoints = p2.y - p1.y;
-            yPoints = yPoints * yPoints;
-            result = Math.sqrt(xPoints + yPoints);
-            return result;
+            return Math.floor(Math.sqrt(Math.pow((p2.x - p1.x), 2) + Math.pow((p2.y - p1.y), 2)));
         };
         // check collision between plane and any cloud object
         Collision.prototype.planeAndCloud = function (cloud) {
@@ -33,7 +25,7 @@ var managers;
             p1.y = this.plane.image.y;
             p2.x = cloud.image.x;
             p2.y = cloud.image.y;
-            if (this.distance(p1, p2) < ((this.plane.height / 2) + (cloud.height / 2))) {
+            if (this.distance(p1, p2) < ((this.plane.height * 0.5) + (cloud.height * 0.5))) {
                 createjs.Sound.play("thunder");
                 this.scoreboard.lives -= 1;
                 cloud.reset();

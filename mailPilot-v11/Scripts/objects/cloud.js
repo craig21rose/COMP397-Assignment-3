@@ -6,7 +6,7 @@ var objects;
         function Cloud(stage, game) {
             this.stage = stage;
             this.game = game;
-            this.image = new createjs.Sprite(managers.Assets.atlas, "cloud");
+            this.image = new createjs.Bitmap(managers.Assets.loader.getResult("asteroid"));
             this.width = this.image.getBounds().width;
             this.height = this.image.getBounds().height;
             this.image.regX = this.width / 2;

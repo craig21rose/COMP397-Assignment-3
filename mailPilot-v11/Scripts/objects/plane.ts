@@ -2,7 +2,7 @@
 module objects {
     // Plane Class
     export class Plane {
-        image: createjs.Sprite;
+        image: createjs.Bitmap;
         stage: createjs.Stage;
         game: createjs.Container;
         engineSound: createjs.SoundInstance;
@@ -11,7 +11,7 @@ module objects {
         constructor(stage: createjs.Stage, game: createjs.Container) {
             this.stage = stage;
             this.game = game;
-            this.image = new createjs.Sprite(managers.Assets.atlas, "plane");
+            this.image = new createjs.Bitmap(managers.Assets.loader.getResult("ship"));
             this.image.x = 610;
             this.width = this.image.getBounds().width;
             this.height = this.image.getBounds().height;

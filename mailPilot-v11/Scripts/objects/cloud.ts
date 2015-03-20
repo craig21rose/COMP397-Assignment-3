@@ -2,7 +2,7 @@
 module objects {
     // Cloud class
     export class Cloud {
-        image: createjs.Sprite;
+        image: createjs.Bitmap;
         stage: createjs.Stage;
         game: createjs.Container;
         width: number;
@@ -12,7 +12,7 @@ module objects {
         constructor(stage: createjs.Stage, game: createjs.Container) {
             this.stage = stage;
             this.game = game;
-            this.image = new createjs.Sprite(managers.Assets.atlas, "cloud");
+            this.image = new createjs.Bitmap(managers.Assets.loader.getResult("asteroid"));
             this.width = this.image.getBounds().width;
             this.height = this.image.getBounds().height;
             this.image.regX = this.width / 2;
