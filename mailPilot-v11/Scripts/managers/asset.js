@@ -1,3 +1,7 @@
+// Mail Pilot Version 11 - 
+// AUTHOR NAME:  Tom Tsiliopoulos
+// Last Modified: October 30th
+// Mail Pilot Version 11 Description - Game Template
 var managers;
 (function (managers) {
     // Image and Sound Manifest;
@@ -10,7 +14,8 @@ var managers;
         { id: "thunder", src: "assets/sounds/explode.ogg" },
         { id: "yay", src: "assets/sounds/power.ogg" }
     ];
-    // SpriteSheet Data Object
+    // ButtonPage Data Sheet
+    //Display images based on locations on image
     var spriteSheetData = {
         "images": ["assets/images/buttonpage.png"],
         "frames": [

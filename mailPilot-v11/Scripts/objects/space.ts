@@ -1,6 +1,12 @@
 ﻿/// <reference path="../managers/asset.ts" />
+
+// Mail Pilot Version 11 - 
+// AUTHOR NAME:  Tom Tsiliopoulos
+// Last Modified: October 30th
+// Mail Pilot Version 11 Description - Game Template
+
 module objects {
-    // Ocean Class
+    // Space Class
     export class Space {
         image: createjs.Bitmap;
         stage: createjs.Stage;
@@ -20,7 +26,7 @@ module objects {
 
             game.addChild(this.image);
         }
-
+        //reset scrolling of background to start from the left
         update() {
             this.image.x += this.dy;
             if (this.image.x >= 0) {

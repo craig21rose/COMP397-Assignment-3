@@ -12,9 +12,13 @@
 /// <reference path="states/menu.ts" />
 /// <reference path="states/gameover.ts" />
 
-// Mail Pilot Version 11 - Added basic state machine structure - Added Button and Label classes
-// Changed online repo
+// Mail Pilot Version 11 - 
+// AUTHOR NAME:  Tom Tsiliopoulos
+// Last Modified: October 30th
+// Mail Pilot Version 11 Description - Game Template
 
+
+//VARIABLES
 var stage: createjs.Stage;
 var game: createjs.Container;
 
@@ -63,6 +67,7 @@ function gameLoop(event): void {
     stage.update();
 }
 
+//State Change Function 
 function changeState(state: number): void {
     // Launch Various "screens"
     switch (state) {

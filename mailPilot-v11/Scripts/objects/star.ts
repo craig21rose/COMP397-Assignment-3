@@ -1,6 +1,12 @@
 ﻿/// <reference path="../managers/asset.ts" />
+
+// Mail Pilot Version 11 - 
+// AUTHOR NAME:  Tom Tsiliopoulos
+// Last Modified: October 30th
+// Mail Pilot Version 11 Description - Game Template
+
 module objects {
-    // Island Class
+    // Star Class
     export class Star {
         image: createjs.Bitmap;
         stage: createjs.Stage;
@@ -29,15 +35,15 @@ module objects {
             this._checkBounds();
         }
 
-        // Reset position of island to the top
+        // Reset position of Star to the left
         public reset() {
             this.image.y = Math.floor(Math.random() * 640);
             this.image.x = -this.height;
         }
 
-        // PRIVATE METHODS +++++++++++++++++++++++++++++++++++++++++
+        // PRIVATE METHODS 
         private _checkBounds() {
-            // check if island has left the bottom of the screen
+            // check if Star has left the screen
             if (this.image.x >= (640 + this.height)) {
                 this.reset();
             }

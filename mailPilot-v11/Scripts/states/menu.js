@@ -6,6 +6,10 @@
 /// <reference path="../objects/asteroid.ts" />
 /// <reference path="../objects/button.ts" />
 /// <reference path="../objects/label.ts" />
+// Mail Pilot Version 11 - 
+// AUTHOR NAME:  Tom Tsiliopoulos
+// Last Modified: October 30th
+// Mail Pilot Version 11 Description - Game Template
 var states;
 (function (states) {
     function playButtonClicked(event) {
@@ -36,8 +40,10 @@ var states;
         // Display Game Over
         gameNameLabel = new objects.Label(stage.canvas.width / 2, 40, "COSMIC POWER");
         game.addChild(gameNameLabel);
+        //Display Instructions Label 
         gameNameLabel2 = new objects.Label(stage.canvas.width / 2, 120, "Instructions:");
         game.addChild(gameNameLabel2);
+        //Display Instructions
         gameNameLabel3 = new objects.Label(stage.canvas.width / 2, 160, "Movement: Move Mouse Up or Down");
         game.addChild(gameNameLabel3);
         // Display Play Again Button

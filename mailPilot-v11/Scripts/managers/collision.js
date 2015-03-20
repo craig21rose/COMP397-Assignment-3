@@ -2,6 +2,10 @@
 /// <reference path="../objects/star.ts" />
 /// <reference path="../objects/ship.ts" />
 /// <reference path="../objects/scoreboard.ts" />
+// Mail Pilot Version 11 - 
+// AUTHOR NAME:  Tom Tsiliopoulos
+// Last Modified: October 30th
+// Mail Pilot Version 11 Description - Game Template
 var managers;
 (function (managers) {
     // Collision Manager Class
@@ -17,7 +21,7 @@ var managers;
         Collision.prototype.distance = function (p1, p2) {
             return Math.floor(Math.sqrt(Math.pow((p2.x - p1.x), 2) + Math.pow((p2.y - p1.y), 2)));
         };
-        // check collision between plane and any cloud object
+        // check collision between ship and any asteroid object
         Collision.prototype.shipAndAsteroid = function (asteroid) {
             var p1 = new createjs.Point();
             var p2 = new createjs.Point();
@@ -31,7 +35,7 @@ var managers;
                 asteroid.reset();
             }
         };
-        // check collision between plane and island
+        // check collision between ship and star
         Collision.prototype.shipAndStar = function () {
             var p1 = new createjs.Point();
             var p2 = new createjs.Point();

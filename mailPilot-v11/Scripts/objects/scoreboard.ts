@@ -1,4 +1,9 @@
-﻿module objects {
+﻿// Mail Pilot Version 11 - 
+// AUTHOR NAME:  Tom Tsiliopoulos
+// Last Modified: October 30th
+// Mail Pilot Version 11 Description - Game Template
+
+module objects {
     // Scoreboard Class
     export class Scoreboard {
         stage: createjs.Stage;

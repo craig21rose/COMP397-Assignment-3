@@ -1,6 +1,12 @@
 ﻿/// <reference path="../managers/asset.ts" />
+
+// Mail Pilot Version 11 - 
+// AUTHOR NAME:  Tom Tsiliopoulos
+// Last Modified: October 30th
+// Mail Pilot Version 11 Description - Game Template
+
 module objects {
-    // Plane Class
+    // Ship Class
     export class Ship {
         image: createjs.Bitmap;
         stage: createjs.Stage;

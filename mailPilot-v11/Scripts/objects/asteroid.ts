@@ -1,6 +1,12 @@
 ﻿/// <reference path="../managers/asset.ts" />
+
+// Mail Pilot Version 11 - 
+// AUTHOR NAME:  Tom Tsiliopoulos
+// Last Modified: October 30th
+// Mail Pilot Version 11 Description - Game Template
+
 module objects {
-    // Cloud class
+    // Asteroid class
     export class Asteroid {
         image: createjs.Bitmap;
         stage: createjs.Stage;
@@ -30,21 +36,23 @@ module objects {
        this._checkBounds();
 }
 
-        // Reset position of island to the top
+        // Reset position of Asteroid to the left
          reset() {
-    this.image.y = Math.floor(Math.random() * 640);
-    this.image.x = -this.height;
-    this.dy = Math.floor(Math.random() * 4) - 2;
-    this.dx = Math.floor(Math.random() * 5) + 5;
+         this.image.y = Math.floor(Math.random() * 640);
+         this.image.x = -this.height;
+         this.dy = Math.floor(Math.random() * 4) - 2;
+         this.dx = Math.floor(Math.random() * 5) + 5;
 }
 
-        // PRIVATE METHODS +++++++++++++++++++++++++++++++++++++++++
-        private _checkBounds() {
-    // check if island has left the bottom of the screen
-    if (this.image.x >= (640 + this.height)) {
-        this.reset();
-    }
-}
+        // PRIVATE METHODS 
+         private _checkBounds()
+         {
+            // check if asteroid has left the screen
+            if (this.image.x >= (640 + this.height))
+            {
+                this.reset();
+            }
+         }
         destroy() {
             game.removeChild(this.image);
         }
