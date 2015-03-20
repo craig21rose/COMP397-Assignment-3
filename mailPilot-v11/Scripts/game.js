@@ -1,9 +1,9 @@
 /// <reference path="constants.ts" />
 /// <reference path="managers/asset.ts" />
-/// <reference path="objects/cloud.ts" />
-/// <reference path="objects/island.ts" />
-/// <reference path="objects/ocean.ts" />
-/// <reference path="objects/plane.ts" />
+/// <reference path="objects/asteroid.ts" />
+/// <reference path="objects/star.ts" />
+/// <reference path="objects/space.ts" />
+/// <reference path="objects/ship.ts" />
 /// <reference path="objects/scoreboard.ts" />
 /// <reference path="objects/label.ts" />
 /// <reference path="objects/button.ts" />
@@ -15,10 +15,10 @@
 // Changed online repo
 var stage;
 var game;
-var ocean;
-var plane;
-var island;
-var clouds = []; // Clouds array;
+var space;
+var ship;
+var star;
+var asteroids = []; // Clouds array;
 var scoreboard;
 var collision;
 var tryAgain;

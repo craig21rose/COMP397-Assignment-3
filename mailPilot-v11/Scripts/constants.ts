@@ -5,8 +5,8 @@
     export var GAME_OVER_STATE: number = 2;
 
     // Game Constants
-    export var CLOUD_NUM: number = 3;
+    export var ASTEROID_NUM: number = 3;
     export var LABEL_FONT = "30px Times New Roman";
     export var LABEL_COLOUR = "#FFFFFF";
-    export var PLANE_LIVES = 3;
+    export var SHIP_LIVES = 3;
 }

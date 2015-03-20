@@ -1,21 +1,21 @@
-﻿/// <reference path="../objects/cloud.ts" />
-/// <reference path="../objects/island.ts" />
-/// <reference path="../objects/plane.ts" />
+﻿/// <reference path="../objects/asteroid.ts" />
+/// <reference path="../objects/star.ts" />
+/// <reference path="../objects/ship.ts" />
 /// <reference path="../objects/scoreboard.ts" />
 
 module managers {
     // Collision Manager Class
     export class Collision {
         // class variables
-        private plane: objects.Plane;
-        private island: objects.Island;
-        private clouds = [];
+        private ship: objects.Ship;
+        private star: objects.Star;
+        private asteroids = [];
         private scoreboard: objects.Scoreboard;
 
-        constructor(plane: objects.Plane, island: objects.Island, clouds, scoreboard: objects.Scoreboard) {
-            this.plane = plane;
-            this.island = island;
-            this.clouds = clouds;
+        constructor(ship: objects.Ship, star: objects.Star, asteroids, scoreboard: objects.Scoreboard) {
+            this.ship = ship;
+            this.star = star;
+            this.asteroids = asteroids;
             this.scoreboard = scoreboard;
         }
 
@@ -25,41 +25,41 @@ module managers {
         }
 
         // check collision between plane and any cloud object
-        private planeAndCloud(cloud: objects.Cloud) {
+        private shipAndAsteroid(asteroid: objects.Asteroid) {
             var p1: createjs.Point = new createjs.Point();
             var p2: createjs.Point = new createjs.Point();
-            p1.x = this.plane.image.x;
-            p1.y = this.plane.image.y;
-            p2.x = cloud.image.x;
-            p2.y = cloud.image.y;
-            if (this.distance(p1, p2) < ((this.plane.height * 0.5) + (cloud.height * 0.5))) {
+            p1.x = this.ship.image.x;
+            p1.y = this.ship.image.y;
+            p2.x = asteroid.image.x;
+            p2.y = asteroid.image.y;
+            if (this.distance(p1, p2) < ((this.ship.height * 0.5) + (asteroid.height * 0.5))) {
                 createjs.Sound.play("thunder");
                 this.scoreboard.lives -= 1;
-                cloud.reset();
+                asteroid.reset();
             }
         }
 
         // check collision between plane and island
-        private planeAndIsland() {
+        private shipAndStar() {
             var p1: createjs.Point = new createjs.Point();
             var p2: createjs.Point = new createjs.Point();
-            p1.x = this.plane.image.x;
-            p1.y = this.plane.image.y;
-            p2.x = this.island.image.x;
-            p2.y = this.island.image.y;
-            if (this.distance(p1, p2) < ((this.plane.height / 2) + (this.island.height / 2))) {
+            p1.x = this.ship.image.x;
+            p1.y = this.ship.image.y;
+            p2.x = this.star.image.x;
+            p2.y = this.star.image.y;
+            if (this.distance(p1, p2) < ((this.ship.height / 2) + (this.star.height / 2))) {
                 createjs.Sound.play("yay");
                 this.scoreboard.score += 100;
-                this.island.reset();
+                this.star.reset();
             }
         }
 
         // Utility Function to Check Collisions
         update() {
-            for (var count = 0; count < constants.CLOUD_NUM; count++) {
-                this.planeAndCloud(this.clouds[count]);
+            for (var count = 0; count < constants.ASTEROID_NUM; count++) {
+                this.shipAndAsteroid(this.asteroids[count]);
             }
-            this.planeAndIsland();
+            this.shipAndStar();
         }
     }
 } 

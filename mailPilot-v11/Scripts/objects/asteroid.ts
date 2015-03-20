@@ -1,7 +1,7 @@
 ﻿/// <reference path="../managers/asset.ts" />
 module objects {
     // Cloud class
-    export class Cloud {
+    export class Asteroid {
         image: createjs.Bitmap;
         stage: createjs.Stage;
         game: createjs.Container;

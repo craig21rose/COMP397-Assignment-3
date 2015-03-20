@@ -1,33 +1,40 @@
 ﻿/// <reference path="../managers/asset.ts" />
 module objects {
-    // Plane Class
-    export class Plane {
+    // Ocean Class
+    export class Space {
         image: createjs.Bitmap;
         stage: createjs.Stage;
         game: createjs.Container;
-        engineSound: createjs.SoundInstance;
         width: number;
         height: number;
+        dy: number;
         constructor(stage: createjs.Stage, game: createjs.Container) {
             this.stage = stage;
             this.game = game;
-            this.image = new createjs.Bitmap(managers.Assets.loader.getResult("ship"));
-            this.image.x = 610;
+            this.image = new createjs.Bitmap(managers.Assets.loader.getResult("space"));
             this.width = this.image.getBounds().width;
             this.height = this.image.getBounds().height;
-            this.image.regX = this.width / 2;
-            this.image.regY = this.height / 2;
-            game.addChild(this.image);
-            this.engineSound = createjs.Sound.play('engine', createjs.Sound.INTERRUPT_NONE, 0, 0, -1, 1, 0);
-        }
+            this.reset();
 
+            this.dy = 5;
+
+            game.addChild(this.image);
+        }
 
         update() {
-            this.image.y = this.stage.mouseY;
+            this.image.x += this.dy;
+            if (this.image.x >= 0) {
+                this.reset();
+            }
         }
+
+        reset() {
+            this.image.x = -640;
+        }
+
         destroy() {
-            this.engineSound.stop();
             game.removeChild(this.image);
         }
     }
-} 
+
+}

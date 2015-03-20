@@ -1,16 +1,16 @@
-/// <reference path="../objects/cloud.ts" />
-/// <reference path="../objects/island.ts" />
-/// <reference path="../objects/plane.ts" />
+/// <reference path="../objects/asteroid.ts" />
+/// <reference path="../objects/star.ts" />
+/// <reference path="../objects/ship.ts" />
 /// <reference path="../objects/scoreboard.ts" />
 var managers;
 (function (managers) {
     // Collision Manager Class
     var Collision = (function () {
-        function Collision(plane, island, clouds, scoreboard) {
-            this.clouds = [];
-            this.plane = plane;
-            this.island = island;
-            this.clouds = clouds;
+        function Collision(ship, star, asteroids, scoreboard) {
+            this.asteroids = [];
+            this.ship = ship;
+            this.star = star;
+            this.asteroids = asteroids;
             this.scoreboard = scoreboard;
         }
         // Utility method - Distance calculation between two points
@@ -18,39 +18,39 @@ var managers;
             return Math.floor(Math.sqrt(Math.pow((p2.x - p1.x), 2) + Math.pow((p2.y - p1.y), 2)));
         };
         // check collision between plane and any cloud object
-        Collision.prototype.planeAndCloud = function (cloud) {
+        Collision.prototype.shipAndAsteroid = function (asteroid) {
             var p1 = new createjs.Point();
             var p2 = new createjs.Point();
-            p1.x = this.plane.image.x;
-            p1.y = this.plane.image.y;
-            p2.x = cloud.image.x;
-            p2.y = cloud.image.y;
-            if (this.distance(p1, p2) < ((this.plane.height * 0.5) + (cloud.height * 0.5))) {
+            p1.x = this.ship.image.x;
+            p1.y = this.ship.image.y;
+            p2.x = asteroid.image.x;
+            p2.y = asteroid.image.y;
+            if (this.distance(p1, p2) < ((this.ship.height * 0.5) + (asteroid.height * 0.5))) {
                 createjs.Sound.play("thunder");
                 this.scoreboard.lives -= 1;
-                cloud.reset();
+                asteroid.reset();
             }
         };
         // check collision between plane and island
-        Collision.prototype.planeAndIsland = function () {
+        Collision.prototype.shipAndStar = function () {
             var p1 = new createjs.Point();
             var p2 = new createjs.Point();
-            p1.x = this.plane.image.x;
-            p1.y = this.plane.image.y;
-            p2.x = this.island.image.x;
-            p2.y = this.island.image.y;
-            if (this.distance(p1, p2) < ((this.plane.height / 2) + (this.island.height / 2))) {
+            p1.x = this.ship.image.x;
+            p1.y = this.ship.image.y;
+            p2.x = this.star.image.x;
+            p2.y = this.star.image.y;
+            if (this.distance(p1, p2) < ((this.ship.height / 2) + (this.star.height / 2))) {
                 createjs.Sound.play("yay");
                 this.scoreboard.score += 100;
-                this.island.reset();
+                this.star.reset();
             }
         };
         // Utility Function to Check Collisions
         Collision.prototype.update = function () {
-            for (var count = 0; count < constants.CLOUD_NUM; count++) {
-                this.planeAndCloud(this.clouds[count]);
+            for (var count = 0; count < constants.ASTEROID_NUM; count++) {
+                this.shipAndAsteroid(this.asteroids[count]);
             }
-            this.planeAndIsland();
+            this.shipAndStar();
         };
         return Collision;
     })();

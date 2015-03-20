@@ -1,15 +1,15 @@
 /// <reference path="../constants.ts" />
 /// <reference path="../objects/button.ts" />
-/// <reference path="../objects/cloud.ts" />
-/// <reference path="../objects/island.ts" />
+/// <reference path="../objects/asteroid.ts" />
+/// <reference path="../objects/star.ts" />
 /// <reference path="../objects/label.ts" />
-/// <reference path="../objects/ocean.ts" />
-/// <reference path="../objects/plane.ts" />
+/// <reference path="../objects/space.ts" />
+/// <reference path="../objects/ship.ts" />
 /// <reference path="../objects/scoreboard.ts" />
 var states;
 (function (states) {
     function gameOverState() {
-        ocean.update();
+        space.update();
     }
     states.gameOverState = gameOverState;
     // Restart Game when Try Again Button is clicked
@@ -29,7 +29,7 @@ var states;
         // Declare new Game Container
         game = new createjs.Container();
         // Instantiate Game Objects
-        ocean = new objects.Ocean(stage, game);
+        space = new objects.Space(stage, game);
         // Show Cursor
         stage.cursor = "default";
         // Display Game Over
