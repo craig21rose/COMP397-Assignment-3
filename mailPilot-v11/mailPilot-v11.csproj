@@ -59,11 +59,11 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="assets\images\1945.bmp" />
     <Content Include="assets\images\asteroid.png" />
     <Content Include="assets\images\atlas.png" />
     <Content Include="assets\images\background.png" />
     <Content Include="assets\images\btnInstructions.png" />
+    <Content Include="assets\images\buttonpage.png" />
     <Content Include="assets\images\cloud.png" />
     <Content Include="assets\images\goldenstar.png" />
     <Content Include="assets\images\playagainbutton2.png" />
@@ -83,7 +83,6 @@
   <ItemGroup>
     <Content Include="css\app.css" />
     <Content Include="css\normalize.css" />
-    <Content Include="assets\images\loading.jpg" />
     <Content Include="index.html" />
     <Content Include="packages.config" />
     <None Include="Scripts\lib\jquery-2.1.1.intellisense.js" />

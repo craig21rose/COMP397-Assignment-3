@@ -1,14 +1,10 @@
 ﻿module managers {
     // Image and Sound Manifest;
     var assetManifest = [
-        { id: "loading", src: "assets/images/loading.jpg" },
         { id: "space", src: "assets/images/background.png" },
         { id: "star", src: "assets/images/goldenstar.png" },
         { id: "ship", src: "assets/images/ship.png" },
         { id: "asteroid", src: "assets/images/asteroid.png" },
-        { id: "playButton", src: "assets/images/playbutton.png" },
-        { id: "tryAgainButton", src: "assets/images/playagainbutton2.png" },
-        { id: "instructionsButton", src: "assets/images/btnInstructions.png" },
         { id: "engine", src: "assets/sounds/engine.ogg" },
         { id: "thunder", src: "assets/sounds/thunder.ogg" },
         { id: "yay", src: "assets/sounds/yay.ogg" }
@@ -16,22 +12,18 @@
 
     // SpriteSheet Data Object
     var spriteSheetData = {
-        "images": ["assets/images/atlas.png"],
+        "images": ["assets/images/buttonpage.png"],
         "frames": [
-            [2, 2, 226, 178],
-            [230, 2, 211, 69],
-            [443, 69, 62, 63],
-            [443, 2, 65, 65],
-            [230, 73, 211, 69],
-            [230, 144, 211, 69]
+            [9, 10, 208, 65],
+            [20, 86, 213, 69],
+            [8, 160, 220, 80]
+ 
         ],
         "animations": {
-            "cloud": [0],
-            "instructionsButton": [1],
-            "island": [2],
-            "plane": [3],
-            "playButton": [4],
-            "tryAgainButton": [5]
+            "instructionsButton": [0],
+            "playButton": [1],
+            "tryAgainButton": [2]
+
         }
     }
 

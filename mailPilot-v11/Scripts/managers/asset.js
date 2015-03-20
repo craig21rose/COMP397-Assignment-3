@@ -16,22 +16,16 @@ var managers;
     ];
     // SpriteSheet Data Object
     var spriteSheetData = {
-        "images": ["assets/images/atlas.png"],
+        "images": ["assets/images/buttonpage.png"],
         "frames": [
-            [2, 2, 226, 178],
-            [230, 2, 211, 69],
-            [443, 69, 62, 63],
-            [443, 2, 65, 65],
-            [230, 73, 211, 69],
-            [230, 144, 211, 69]
+            [9, 10, 208, 65],
+            [20, 86, 213, 69],
+            [8, 160, 220, 80]
         ],
         "animations": {
-            "cloud": [0],
-            "instructionsButton": [1],
-            "island": [2],
-            "plane": [3],
-            "playButton": [4],
-            "tryAgainButton": [5]
+            "instructionsButton": [0],
+            "playButton": [1],
+            "tryAgainButton": [2]
         }
     };
     // Asset Manager Class
