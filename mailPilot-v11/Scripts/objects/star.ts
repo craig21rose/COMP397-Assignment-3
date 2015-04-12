@@ -30,21 +30,21 @@ module objects {
         }
 
         public update() {
-            this.image.x += this.dy;
+            this.image.y += this.dy;
 
             this._checkBounds();
         }
 
         // Reset position of Star to the left
         public reset() {
-            this.image.y = Math.floor(Math.random() * 640);
-            this.image.x = -this.height;
+            this.image.y = -this.height;
+            this.image.x = Math.floor(Math.random() * 640);
         }
 
         // PRIVATE METHODS 
         private _checkBounds() {
             // check if Star has left the screen
-            if (this.image.x >= (640 + this.height)) {
+            if (this.image.y >= (480 + this.height)) {
                 this.reset();
             }
         }

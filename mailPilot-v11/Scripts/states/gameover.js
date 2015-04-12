@@ -2,6 +2,7 @@
 /// <reference path="../objects/button.ts" />
 /// <reference path="../objects/asteroid.ts" />
 /// <reference path="../objects/star.ts" />
+/// <reference path="../objects/boss.ts" />
 /// <reference path="../objects/label.ts" />
 /// <reference path="../objects/space.ts" />
 /// <reference path="../objects/ship.ts" />
@@ -21,7 +22,7 @@ var states;
         stage.removeChild(game);
         game.removeAllChildren();
         game.removeAllEventListeners();
-        currentState = constants.PLAY_STATE;
+        currentState = constants.MENU_STATE;
         changeState(currentState);
     }
     states.tryAgainClicked = tryAgainClicked;

@@ -30,25 +30,25 @@ module objects {
 
         update()
         {
-       this.image.y += this.dy;
-       this.image.x += this.dx;
+            this.image.y += this.dy;
+            this.image.x += this.dx;
 
-       this._checkBounds();
-}
+            this._checkBounds();
+        }
 
         // Reset position of Asteroid to the left
          reset() {
-         this.image.y = Math.floor(Math.random() * 640);
-         this.image.x = -this.height;
-         this.dy = Math.floor(Math.random() * 4) - 2;
-         this.dx = Math.floor(Math.random() * 5) + 5;
+             this.image.y = -this.height;
+             this.image.x = Math.floor(Math.random() * 640);
+             this.dy = Math.floor(Math.random() * 5) + 5;
+             this.dx = Math.floor(Math.random() * 4) - 2;
 }
 
         // PRIVATE METHODS 
          private _checkBounds()
          {
             // check if asteroid has left the screen
-            if (this.image.x >= (640 + this.height))
+             if (this.image.y >= (480 + this.height))
             {
                 this.reset();
             }

@@ -18,7 +18,7 @@ module objects {
             this.stage = stage;
             this.game = game;
             this.image = new createjs.Bitmap(managers.Assets.loader.getResult("ship"));
-            this.image.x = 610;
+            this.image.y = 430;
             this.width = this.image.getBounds().width;
             this.height = this.image.getBounds().height;
             this.image.regX = this.width / 2;
@@ -29,7 +29,7 @@ module objects {
 
 
         update() {
-            this.image.y = this.stage.mouseY;
+            this.image.x = this.stage.mouseX;
         }
         destroy() {
             this.engineSound.stop();

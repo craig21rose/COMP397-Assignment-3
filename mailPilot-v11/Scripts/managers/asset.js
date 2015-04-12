@@ -6,10 +6,11 @@ var managers;
 (function (managers) {
     // Image and Sound Manifest;
     var assetManifest = [
-        { id: "space", src: "assets/images/background.png" },
+        { id: "space", src: "assets/images/background.jpg" },
         { id: "star", src: "assets/images/goldenstar.png" },
-        { id: "ship", src: "assets/images/ship.png" },
+        { id: "ship", src: "assets/images/spaceship.png" },
         { id: "asteroid", src: "assets/images/asteroid.png" },
+        { id: "boss", src: "assets/images/starship.jpg" },
         { id: "engine", src: "assets/sounds/RocketThrusters.ogg" },
         { id: "thunder", src: "assets/sounds/explode.ogg" },
         { id: "yay", src: "assets/sounds/power.ogg" }
@@ -19,14 +20,22 @@ var managers;
     var spriteSheetData = {
         "images": ["assets/images/buttonpage.png"],
         "frames": [
-            [9, 10, 208, 65],
-            [20, 86, 213, 69],
-            [8, 160, 220, 80]
+            [160, 43, 153, 39],
+            [2, 84, 153, 39],
+            [2, 2, 185, 39],
+            [2, 43, 156, 39],
+            [189, 2, 182, 39],
+            [157, 84, 153, 39],
+            [312, 84, 153, 39]
         ],
         "animations": {
-            "instructionsButton": [0],
-            "playButton": [1],
-            "tryAgainButton": [2]
+            "EasyMode": [0],
+            "HardMode": [1],
+            "NormalMode": [2],
+            "tryAgainButton": [3],
+            "instructionsButton": [4],
+            "menuButton": [5],
+            "playButton": [6]
         }
     };
     // Asset Manager Class

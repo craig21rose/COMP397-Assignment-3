@@ -1,4 +1,4 @@
-/// <reference path="../constants.ts" />
+﻿/// <reference path="../constants.ts" />
 /// <reference path="../objects/scoreboard.ts" />
 /// <reference path="../objects/ship.ts" />
 /// <reference path="../objects/space.ts" />
@@ -7,66 +7,84 @@
 /// <reference path="../objects/boss.ts" />
 /// <reference path="../objects/button.ts" />
 /// <reference path="../objects/label.ts" />
+
 // Mail Pilot Version 11 - 
 // AUTHOR NAME:  Tom Tsiliopoulos
 // Last Modified: October 30th
 // Mail Pilot Version 11 Description - Game Template
-var states;
-(function (states) {
-    function playButtonClicked(event) {
+
+module states {
+    export function easyButtonClicked(event: MouseEvent) {
         stage.removeChild(game);
         ship.destroy();
         game.removeAllChildren();
         game.removeAllEventListeners();
-        currentState = constants.DIFFICULTY_STATE;
+        currentState = constants.PLAY_STATE;
         changeState(currentState);
     }
-    states.playButtonClicked = playButtonClicked;
-    function instructionsButtonClicked(event) {
+
+    export function normalButtonClicked(event: MouseEvent) {
         stage.removeChild(game);
         ship.destroy();
         game.removeAllChildren();
         game.removeAllEventListeners();
-        currentState = constants.INSTRUCTION_STATE;
+        currentState = constants.NORMAL_STATE;
         changeState(currentState);
-        game.removeChild(instructionsButton);
     }
-    states.instructionsButtonClicked = instructionsButtonClicked;
-    function menuState() {
+
+    export function hardButtonClicked(event: MouseEvent) {
+        stage.removeChild(game);
+        ship.destroy();
+        game.removeAllChildren();
+        game.removeAllEventListeners();
+        currentState = constants.HARD_STATE;
+        changeState(currentState);
+  
+    }
+
+    export function difficultyState() {
         space.update();
         ship.update();
     }
-    states.menuState = menuState;
-    function menu() {
-        var gameNameLabel;
-        var gameNameLabel2;
-        var gameNameLabel3;
+
+    export function difficulty() {
+        var gameNameLabel: objects.Label;
+        var gameNameLabel2: objects.Label;
+   
+
         // Declare new Game Container
         game = new createjs.Container();
+
         // Instantiate Game Objects
         space = new objects.Space(stage, game);
         ship = new objects.Ship(stage, game);
+
         // Show Cursor
         stage.cursor = "default";
+
         // Display Game Over
         gameNameLabel = new objects.Label(stage.canvas.width / 2, 40, "COSMIC POWER");
         game.addChild(gameNameLabel);
-        //Display Instructions Label 
-        gameNameLabel2 = new objects.Label(stage.canvas.width / 2, 120, "Instructions:");
+        
+        //Display Difficulty Label 
+        gameNameLabel2 = new objects.Label(stage.canvas.width / 2, 120, "Choose your Level of Difficulty:");
         game.addChild(gameNameLabel2);
-        //Display Instructions
-        gameNameLabel3 = new objects.Label(stage.canvas.width / 2, 160, "Movement: Move Mouse Left or Right");
-        game.addChild(gameNameLabel3);
+
+
         // Display Play Again Button
-        playButton = new objects.Button(stage.canvas.width / 2, 300, "playButton");
-        game.addChild(playButton);
-        playButton.addEventListener("click", playButtonClicked);
+        easyButton = new objects.Button(stage.canvas.width / 2, 250, "EasyMode");
+        game.addChild(easyButton);
+        easyButton.addEventListener("click", easyButtonClicked);
+
         // Display Instructions Button
-        instructionsButton = new objects.Button(stage.canvas.width / 2, 350, "instructionsButton");
-        game.addChild(instructionsButton);
-        instructionsButton.addEventListener("click", instructionsButtonClicked);
+        normalButton = new objects.Button(stage.canvas.width / 2, 300, "NormalMode");
+        game.addChild(normalButton);
+        normalButton.addEventListener("click", normalButtonClicked);
+
+        hardButton = new objects.Button(stage.canvas.width / 2, 350, "HardMode");
+        game.addChild(hardButton);
+        hardButton.addEventListener("click", hardButtonClicked);
+
         stage.addChild(game);
     }
-    states.menu = menu;
-})(states || (states = {}));
-//# sourceMappingURL=menu.js.map
+}  
